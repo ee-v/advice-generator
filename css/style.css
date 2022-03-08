@@ -1,0 +1,121 @@
+:root {
+  --font             : 'Manrope', sans-serif;
+  --light-cyan       : hsl(193, 38%, 86%);
+  --neon-green       : hsl(150, 100%, 66%);
+  --grayish-blue     : hsl(217, 19%, 38%);
+  --dark-grayish-blue: hsl(217, 19%, 24%);
+  --dark-blue        : hsl(218, 23%, 16%);
+  --title-size       : 0.8rem;
+  --text-size        : 1.75rem;
+}
+
+body {
+  font-family     : var(--font);
+  background-color: var(--dark-blue);
+}
+
+.flex {
+  display        : flex;
+  align-items    : center;
+  justify-content: center;
+}
+
+.vh {
+  height: 100vh;
+}
+
+.card {
+  width           : 90%;
+  max-width       : 450px;
+  margin          : 0 auto;
+  text-align      : center;
+  background-color: var(--dark-grayish-blue);
+  border-radius   : 15px;
+  padding         : 16px 8px;
+  position        : relative;
+}
+
+.title,
+.text {
+  margin: 0;
+}
+
+.title {
+  color      : var(--neon-green);
+  font-size  : var(--title-size);
+  font-weight: 500;
+  padding    : 10px 0;
+}
+
+.text {
+  color      : var(--light-cyan);
+  font-size  : var(--text-size);
+  font-weight: 800;
+}
+
+.divisor {
+  display            : block;
+  margin             : 0 auto;
+  background-image   : url('../images/pattern-divider-mobile.svg');
+  background-repeat  : no-repeat;
+  background-position: center;
+  height             : 10px;
+  padding-top        : 16px;
+  padding-bottom     : 64px;
+}
+
+.btn {
+  background-color   : var(--neon-green);
+  border             : none;
+  padding            : 10px 15px;
+  border-radius      : 50%;
+  position           : absolute;
+  transform          : translateX(-50%) translateY(-25%);
+  cursor             : pointer;
+  width              : 60px;
+  height             : 60px;
+  background-image   : url('../images/icon-dice.svg');
+  background-repeat  : no-repeat;
+  background-position: center;
+}
+
+.btn:hover {
+  -webkit-box-shadow: 0px 0px 16px 6px var(--neon-green);
+  -moz-box-shadow   : 0px 0px 16px 6px var(--neon-green);
+  box-shadow        : 0px 0px 16px 6px var(--neon-green);
+}
+
+.working {
+  animation-name           : rotation;
+  animation-duration       : 1s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes rotation {
+  100% {
+    transform: translateX(-50%) translateY(-25%) rotate(360deg);
+  }
+}
+
+.attribution {
+  font-size : 14px;
+  text-align: center;
+  color     : var(--light-cyan);
+}
+
+.attribution a {
+  color: var(--neon-green);
+}
+
+@media(min-width:1280px) {
+  .divisor {
+    display            : block;
+    margin             : 0 auto;
+    background-image   : url('../images/pattern-divider-desktop.svg');
+    background-repeat  : no-repeat;
+    background-position: center;
+    height             : 10px;
+    padding            : 16px 0 80px 0;
+  }
+}
